@@ -18,7 +18,13 @@ def print_menu():
 def main():
 
     dispenser = Dispenser()
-    attendant_name = input("Enter Attendant Name: ")
+
+    while True:
+        attendant_name = input("Enter Attendant Name: ").strip()
+        if attendant_name:
+            break
+        else:
+            print("Attendant name cannot be empty")
 
     attendant = FuelAttendant(attendant_name, dispenser)
 
